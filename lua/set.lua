@@ -23,7 +23,6 @@ vim.cmd [[
   set shell=/bin/bash
   set showcmd
   set ruler
-  set paste
   let loaded_netrw=1
   let loaded_netrwPlugin=1
 ]]
