@@ -1,13 +1,21 @@
+-------------------------
+-- Chnage default leader key to space
+-------------------------
 vim.g.mapleader = " "
 
+-------------------------
+-- Invoke osc52 when using vim yank
+-------------------------
 vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeOpen)
 
+-------------------------
+-- Invoke osc52 when using vim yank
+-------------------------
 vim.cmd([[ autocmd TextYankPost * lua require('osc52').copy_visual() ]])
 
 -------------------------
--- Kanawaga function (press space + c to switch colors)
+-- Press space + c to switch colors
 -------------------------
-
 -- Define a list of colorschemes to cycle through
 local colorschemes = {"kanagawa-dragon", "kanagawa-lotus" }
 
