@@ -2,4 +2,4 @@
 -- KANAGAWA 
 ----------------------
 
-require("kanagawa").load("lotus")
+require("kanagawa").load("dragon")

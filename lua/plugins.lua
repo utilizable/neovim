@@ -8,6 +8,21 @@ return require('packer').startup(function(use)
 
   use {'nvim-telescope/telescope.nvim'}
 
+--  use({
+--    "olimorris/codecompanion.nvim",
+--    config = function()
+--      require("codecompanion").setup()
+--    end,
+--    requires = {
+--      "nvim-lua/plenary.nvim",
+--      "nvim-treesitter/nvim-treesitter",
+--      "nvim-telescope/telescope.nvim", -- Optional
+--      "stevearc/dressing.nvim" -- Optional: Improves the default Neovim UI
+--    }
+--  })
+
+  use { "David-Kunz/gen.nvim" }
+
   use {
     "someone-stole-my-name/yaml-companion.nvim",
     requires = {
@@ -23,9 +38,9 @@ return require('packer').startup(function(use)
   use{'rebelot/kanagawa.nvim'}
 
   use{
-    'nvim-treesitter/nvim-treesitter', 
-    { 
-      run = ':TSUpdate' 
+    'nvim-treesitter/nvim-treesitter',
+    {
+      run = ':TSUpdate'
     }
   }
 
@@ -39,7 +54,12 @@ return require('packer').startup(function(use)
    'VonHeikemen/lsp-zero.nvim',
    branch = 'v3.x',
    requires = {
-     {'williamboman/mason.nvim'},
+     {
+      'williamboman/mason.nvim',
+			run = function()
+				pcall(vim.cmd, 'MasonUpdate')
+			end,
+     },
      {'williamboman/mason-lspconfig.nvim'},
      {'neovim/nvim-lspconfig'},
      {'hrsh7th/nvim-cmp'},

@@ -8,6 +8,16 @@ vim.g.mapleader = " "
 -------------------------
 vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeOpen)
 
+-- Sample keybind for prompt menu
+vim.keymap.set({ "n", "v" }, "<leader>oo", function()
+  require('ollama').prompt()
+end, { desc = "ollama prompt" })
+
+-- Sample keybind for direct prompting
+vim.keymap.set({ "n", "v" }, "<leader>oG", function()
+  require('ollama').prompt('Generate_Code')
+end, { desc = "ollama Generate Code" })
+
 -------------------------
 -- Invoke osc52 when using vim yank
 -------------------------
@@ -17,7 +27,7 @@ vim.cmd([[ autocmd TextYankPost * lua require('osc52').copy_visual() ]])
 -- Press space + c to switch colors
 -------------------------
 -- Define a list of colorschemes to cycle through
-local colorschemes = {"kanagawa-dragon", "kanagawa-lotus" }
+local colorschemes = {"kanagawa-lotus", "kanagawa-dragon" }
 
 -- Initialize an index to track the current colorscheme
 local current_index = 1

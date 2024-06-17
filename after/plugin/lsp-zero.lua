@@ -8,6 +8,16 @@ local lsp = require('lsp-zero').preset({})
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {'tsserver', 'rust_analyzer'},
+  handlers = {
+    function(server_name)
+      require('lspconfig')[server_name].setup({})
+    end,
+  }
+})
+
 --------------------------
 -- YAML
 --------------------------
@@ -15,7 +25,7 @@ require('lspconfig').yamlls.setup {
   settings = {
     yaml = {
       schemas = {
-        kubernetes = "*.yaml","*.yml",
+        kubernetes = "*.yaml","*yml",
         ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
         ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
         ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",

@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/root/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["gen.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/gen.nvim",
+    url = "https://github.com/David-Kunz/gen.nvim"
+  },
   ["kanagawa.nvim"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
