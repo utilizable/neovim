@@ -6,6 +6,8 @@ return require('packer').startup(function(use)
 
   use {'nvim-lua/plenary.nvim'}
 
+  use {'towolf/vim-helm'}
+
   use {'nvim-telescope/telescope.nvim'}
 
   use { "David-Kunz/gen.nvim" }

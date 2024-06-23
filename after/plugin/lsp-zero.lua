@@ -5,9 +5,24 @@
 -- https://lsp-zero.netlify.app/v3.x/guide/what-to-do-when-lsp-doesnt-start.html
 
 local lsp = require('lsp-zero').preset({})
-
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
+----------------------
+-- HELM-LS 
+----------------------
+require('lspconfig').helm_ls.setup {
+settings = {
+  ['helm-ls'] = {
+    yamlls = {
+      path = "yaml-language-server",
+    }
+  }
+}
+}
+
+----------------------
+-- MASON 
+----------------------
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {'tsserver', 'rust_analyzer'},
