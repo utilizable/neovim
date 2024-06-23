@@ -1,0 +1,11 @@
+------------------
+-- YAML-COMPANION 
+--------------------
+
+-- Add this to your init.lua or a separate Lua configuration file
+--vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+--  pattern = {"*.yaml", "*.yml"},
+--  callback = function()
+--    require("yaml-companion").open_ui_select()
+--  end,
+--})
