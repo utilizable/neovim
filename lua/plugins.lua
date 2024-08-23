@@ -36,7 +36,9 @@ return require('packer').startup(function(use)
   use{'ojroques/nvim-osc52'}
 
   use{'williamboman/mason.nvim'}
-
+		
+  use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" }
+		
   use {
    'VonHeikemen/lsp-zero.nvim',
    branch = 'v3.x',
@@ -51,7 +53,6 @@ return require('packer').startup(function(use)
      {'neovim/nvim-lspconfig'},
      {'hrsh7th/nvim-cmp'},
      {'hrsh7th/cmp-nvim-lsp'},
-     {'L3MON4D3/LuaSnip'},
    }
   }
 
