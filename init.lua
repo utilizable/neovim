@@ -12,4 +12,4 @@ require('plugins')
 if not initial_setup then
     require('remaps')
     require('set')
-end|
+end
