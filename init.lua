@@ -2,7 +2,7 @@
 -- CONFIG 
 --------------------------
 
-require('remaps')
 require('plugins')
+require('remaps')
 require('set')
 require('nvim-tree')
